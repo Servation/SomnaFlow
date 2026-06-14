@@ -1,0 +1,22 @@
+# Specs and docs
+GEMINI.md
+SomnaFlow.md
+PRD.md
+
+# Dependencies
+node_modules/
+
+# Environment Variables
+.env
+.env.local
+
+# Database / Ledger
+sleep_records.enc
+*.enc
+
+# OS Files
+.DS_Store
+Thumbs.db
+
+# Test Coverage
+coverage/

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SomnaFlow - Zero-Knowledge Sleep Tracker</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div id="app">
+        <header>
+            <h1>SomnaFlow</h1>
+            <p>Privacy-First Sleep Health & Recovery Analytics</p>
+        </header>
+
+        <div id="lock-screen" class="hidden">
+            <div class="card">
+                <h2>System Locked</h2>
+                <p>Please enter your encryption password to unlock the local AES-256-CBC cipher.</p>
+                <input type="password" id="unlock-password" placeholder="Encryption Password">
+                <button id="unlock-btn">Unlock System</button>
+                <p id="unlock-error" class="error"></p>
+            </div>
+        </div>
+
+        <div id="dashboard" class="hidden">
+            <div class="upload-section">
+                <div id="dropzone" class="dropzone">
+                    <p>Drag & Drop Biometric CSV Here</p>
+                    <p class="format-info">Required columns: <code>timestamp, heart_rate, hrv, sleep_phase</code></p>
+                    <input type="file" id="file-input" accept=".csv" style="display: none;">
+                </div>
+                <p id="upload-status"></p>
+            </div>
+
+            <div class="charts-section">
+                <canvas id="historyChart"></canvas>
+            </div>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
